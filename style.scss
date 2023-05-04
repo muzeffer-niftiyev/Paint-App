@@ -1,0 +1,243 @@
+$font-color: #444;
+$green-color: rgb(38, 136, 102);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  &::selection {
+    background-color: inherit;
+  }
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Monokio", sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  display: flex;
+
+  .tools {
+    max-width: 450px;
+    padding: 50px;
+    padding-top: 10px;
+    background-color: rgba(69, 144, 191, 0.726);
+    height: 100vh;
+
+    .title {
+      font-size: 24px;
+      color: $font-color;
+    }
+
+    .shape {
+      display: flex;
+      align-items: center;
+      width: 100%;
+
+      &:hover > * {
+        color: $green-color;
+        cursor: pointer;
+      }
+
+      &:first-of-type {
+        margin-top: 20px;
+      }
+    }
+
+    .icon {
+      font-size: 60px;
+      transform: translateY(-21px);
+      width: 40px;
+      height: 40px;
+      color: $font-color;
+    }
+    .triangle {
+      transform: translate(-14px, -28px);
+      font-size: 80px;
+    }
+    .name {
+      margin-left: 6px;
+      font-size: 22px;
+      color: $font-color;
+    }
+
+    .section-2 {
+      margin-top: 25px;
+
+      .erase-btn {
+        margin-top: 10px !important;
+      }
+      .erase-btn,
+      .brush-btn {
+        display: flex;
+        margin-top: 20px;
+
+        &:hover > * {
+          color: $green-color;
+          cursor: pointer;
+        }
+
+        .erase {
+          width: 40px;
+          height: 40px;
+          transform: translate(-3px, -9px);
+        }
+      }
+    }
+
+    .section-3 {
+      display: flex;
+      flex-direction: column;
+
+      & > h4 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .color {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        transition: all 0.5s;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+      .row-1 {
+        .color:nth-child(1) {
+          background-color: red;
+        }
+
+        .color:nth-child(2) {
+          background-color: green;
+        }
+        .color:nth-child(3) {
+          background-color: black;
+        }
+      }
+
+      .row-2 {
+        .color:nth-child(1) {
+          background-color: violet;
+        }
+        .color:nth-child(2) {
+          background-color: blue;
+        }
+        .color:nth-child(3) {
+          background-color: yellow;
+        }
+      }
+
+      .row-3 {
+        .color:nth-child(1) {
+          background-color: brown;
+        }
+        .color:nth-child(2) {
+          background-color: aqua;
+        }
+        .color:nth-child(3) {
+          background-color: orange;
+        }
+      }
+
+      .row-4 {
+        .color:nth-child(1) {
+          background-color: bisque;
+        }
+        .color:nth-child(2) {
+          background-color: gray;
+        }
+        .color:nth-child(3) {
+          background-color: skyblue;
+        }
+      }
+
+      .row {
+        display: flex;
+        gap: 20px;
+        padding-top: 20px;
+      }
+
+      .set-color {
+        width: 100%;
+        margin-top: 30px;
+        height: 40px;
+        cursor: pointer;
+      }
+    }
+
+    .section-4 {
+      display: flex;
+      flex-direction: column;
+      margin-top: 30px;
+      gap: 15px;
+
+      & > button {
+        padding: 15px;
+        font-size: 19px;
+        border-radius: 10px;
+        cursor: pointer;
+        border: none;
+        color: $font-color;
+        transition: all 0.6s;
+
+        &:hover {
+          background-color: $green-color;
+          color: #eee;
+        }
+      }
+    }
+  }
+}
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 20px;
+  background: #ddd;
+  outline: none;
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  margin: 25px 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 30px;
+  height: 30px;
+  background: $green-color;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.active {
+  border: 6px solid $green-color;
+  transition: all 0.4s;
+}
+
+.canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+
+.selected > * {
+  color: $green-color !important;
+}
+
+#brush-img {
+  width: 40px;
+  height: 40px;
+  transform: translateY(-5px);
+}
